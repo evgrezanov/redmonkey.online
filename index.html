@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Evgenii Rezanov — Senior WordPress Developer | Migrations & WooCommerce</title>
+  <meta name="description" content="WordPress and WooCommerce developer with international experience. Specialization: site migrations, e-commerce solutions, technical optimization. wpcraft.ru">
+  <meta name="keywords" content="WordPress, WooCommerce, site migration, development, wpcraft.ru, Bangkok">
+  <meta name="author" content="Evgenii Rezanov">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Evgenii Rezanov — Senior WordPress Developer">
+  <meta property="og:description" content="WordPress migrations & WooCommerce implementations for international clients">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wpcraft.ru">
+  <meta property="og:image" content="https://eredmonkey.link/avatar.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@ERedmonkey">
+  
+  <!-- Favicon -->
+  <link rel="canonical" href="https://wpcraft.ru">
+  
+  <!-- Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Light theme text colors */
+    [data-theme="light"] {
+      color: #1f2937;
+    }
+    
+    [data-theme="light"] .text-white {
+      color: #1f2937 !important;
+    }
+    
+    [data-theme="light"] body {
+      background-color: #ffffff;
+      color: #1f2937;
+    }
+    
+    [data-theme="light"] .bg-gray-900 {
+      background-color: #f3f4f6 !important;
+    }
+    
+    [data-theme="light"] .text-gray-900 {
+      color: #1f2937 !important;
+    }
+    
+    [data-theme="light"] .opacity-80 {
+      opacity: 1;
+    }
+    
+    [data-theme="light"] .opacity-70 {
+      opacity: 1;
+    }
+    
+    [data-theme="light"] .opacity-60 {
+      opacity: 0.8;
+    }
+    
+    /* Additional light theme text colors for better readability */
+    [data-theme="light"] h1,
+    [data-theme="light"] h2,
+    [data-theme="light"] h3,
+    [data-theme="light"] h4,
+    [data-theme="light"] h5,
+    [data-theme="light"] h6 {
+      color: #111827 !important;
+    }
+    
+    [data-theme="light"] p {
+      color: #374151 !important;
+    }
+    
+    [data-theme="light"] span:not(.gradient-text) {
+      color: #374151;
+    }
+    
+    [data-theme="light"] li {
+      color: #374151;
+    }
+    
+    [data-theme="light"] .card-title {
+      color: #111827 !important;
+    }
+    
+    [data-theme="light"] .stat-title {
+      color: #4b5563 !important;
+    }
+    
+    [data-theme="light"] .label-text {
+      color: #374151 !important;
+    }
+    
+    [data-theme="light"] .font-semibold {
+      color: #1f2937 !important;
+    }
+    
+    [data-theme="light"] .font-bold {
+      color: #111827 !important;
+    }
+    
+    /* Dark theme body */
+    [data-theme="dark"] body {
+      background-color: #1a1a2e;
+      color: #e5e7eb;
+    }
+    
+    /* Navbar and footer light theme */
+    [data-theme="light"] .navbar {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    [data-theme="light"] .navbar a {
+      color: #374151;
+    }
+    
+    [data-theme="light"] .navbar a:hover {
+      color: #667eea;
+    }
+    
+    [data-theme="light"] .footer {
+      background-color: #f9fafb;
+      color: #374151;
+    }
+    
+    [data-theme="light"] .footer a {
+      color: #4b5563;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .tech-badge {
+      transition: all 0.3s ease;
+    }
+    
+    .tech-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    .case-card {
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    
+    .case-card:hover {
+      transform: translateY(-5px);
+      border-color: #667eea;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    [data-theme="light"] .case-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Cards in light theme */
+    [data-theme="light"] .card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+    }
+    
+    [data-theme="light"] .card-body p,
+    [data-theme="light"] .card-body span,
+    [data-theme="light"] .card-body li {
+      color: #4b5563 !important;
+    }
+    
+    [data-theme="light"] .alert {
+      color: #1f2937;
+    }
+    
+    [data-theme="light"] .leading-relaxed {
+      color: #4b5563 !important;
+    }
+    
+    .stats-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="transition-colors duration-300 smooth-scroll">
+
+<!-- Navigation -->
+<nav class="navbar bg-base-100 shadow-lg sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="#about" data-i18n="navAbout">Обо мне</a></li>
+        <li><a href="#cases" data-i18n="navCases">Кейсы</a></li>
+        <li><a href="#skills" data-i18n="navSkills">Навыки</a></li>
+        <li><a href="#reviews" data-i18n="navReviews">Отзывы</a></li>
+        <li><a href="#contact" data-i18n="navContact">Контакты</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost normal-case text-xl font-bold gradient-text" data-i18n="brand">wpcraft.ru</a>
+  </div>
+  
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="#about" data-i18n="navAbout">Обо мне</a></li>
+      <li><a href="#cases" data-i18n="navCases">Кейсы</a></li>
+      <li><a href="#skills" data-i18n="navSkills">Навыки</a></li>
+      <li><a href="#reviews" data-i18n="navReviews">Отзывы</a></li>
+      <li><a href="#contact" data-i18n="navContact">Контакты</a></li>
+    </ul>
+  </div>
+  
+  <div class="navbar-end gap-2">
+    <button onclick="toggleTheme()" class="btn btn-ghost btn-circle">
+      <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
+        <li><a onclick="setLanguage('ru')">🇷🇺 Русский</a></li>
+        <li><a onclick="setLanguage('en')">🇬🇧 English</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero min-h-screen bg-gradient-to-br from-base-200 to-base-300">
+  <div class="hero-content flex-col lg:flex-row-reverse gap-12">
+    <div class="float-animation">
+      <div class="avatar online">
+        <div class="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4 shadow-2xl">
+          <img src="https://cdn.builder.io/api/v1/image/assets%2Fd339bfcdad644f14885ed4da129aa3bb%2F2281226a3e1a471db3301e989c7b531b" alt="Evgenii Rezanov" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="max-w-2xl text-center lg:text-left">
+      <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+        <span data-i18n="heroGreeting">👋 Привет, я</span> <span class="gradient-text">Evgenii</span>
+      </h1>
+      
+      <!-- Typing Animation -->
+      <div class="mb-6 flex justify-center">
+        <img id="typing-animation" 
+             src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=23&pause=1000&color=667eea&width=500&lines=Full-stack+разработчик;Team+Lead;WordPress+Plugin+разработчик;Sr.+%22космические+корабли+на+WP%22" 
+             alt="Typing SVG" 
+             class="max-w-full h-auto" />
+      </div>
+      
+      <p class="text-2xl font-semibold mb-4" data-i18n="heroTitle">
+        Senior WordPress Developer & Team Lead
+      </p>
+      <p class="text-lg mb-6 opacity-80" data-i18n="heroDescription">
+        Помогаю бизнесам мигрировать на WordPress без потери данных и SEO позиций. 
+        Специализация: WooCommerce e-commerce и технические оптимизации для международных клиентов.
+      </p>
+      
+      <!-- Stats -->
+      <div class="stats stats-vertical lg:stats-horizontal shadow-xl mb-8 bg-base-100">
+        <div class="stat place-items-center">
+          <div class="stat-title" data-i18n="statMigrations">Успешных миграций</div>
+          <div class="stat-value text-primary stats-number">50+</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title" data-i18n="statExperience">Лет опыта</div>
+          <div class="stat-value text-secondary stats-number">10+</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title" data-i18n="statClients">Довольных клиентов</div>
+          <div class="stat-value text-accent stats-number">100%</div>
+        </div>
+      </div>
+      
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <a href="https://calendly.com/eredmonkey/30min" target="_blank" class="btn btn-primary btn-lg gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span data-i18n="ctaBooking">Забронировать встречу</span>
+        </a>
+        <a href="https://www.upwork.com/freelancers/~your-upwork-id" target="_blank" class="btn btn-outline btn-lg gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span data-i18n="ctaUpwork">Нанять на Upwork</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="aboutTitle">Обо мне</h2>
+      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              <span data-i18n="aboutExpertiseTitle">Моя экспертиза</span>
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2">
+                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span data-i18n="aboutExpertise1">WordPress миграции любой сложности без простоев</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span data-i18n="aboutExpertise2">WooCommerce интеграции и оптимизация производительности</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span data-i18n="aboutExpertise3">Техническое SEO и настройка email-инфраструктуры (DKIM, SPF)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span data-i18n="aboutExpertise4">Кастомизация тем (Kadence, Astra) и плагинов</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span data-i18n="aboutExpertise5">Интеграция с платформами (Infomaniak, Beget, и др.)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span data-i18n="aboutApproachTitle">Подход к работе</span>
+            </h3>
+            <p class="leading-relaxed" data-i18n="aboutApproach1">
+              Работаю по методологии SCRUM с прозрачными спринтами и регулярной коммуникацией. 
+              Каждый проект начинается с детального анализа требований и заканчивается полной 
+              технической документацией.
+            </p>
+            <p class="leading-relaxed mt-3" data-i18n="aboutApproach2">
+              Специализируюсь на работе с международными клиентами, обеспечивая поддержку 
+              24/7 и гарантируя качество на каждом этапе разработки.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <div class="badge badge-outline badge-lg">SCRUM Master</div>
+              <div class="badge badge-outline badge-lg">Full Stack</div>
+              <div class="badge badge-outline badge-lg">Bangkok 🇹🇭</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cases Section -->
+<section id="cases" class="py-20 bg-base-200">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="casesTitle">Кейсы и проекты</h2>
+      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+      <p class="mt-4 text-lg opacity-80 max-w-2xl mx-auto" data-i18n="casesSubtitle">
+        Реальные примеры решенных задач для бизнеса
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Case 1 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Миграция интернет-магазина</h3>
+          <p class="text-sm opacity-80 mb-3">E-commerce • WooCommerce</p>
+          <p>Миграция магазина с 10,000+ товарами на новую платформу с сохранением всех SEO позиций и нулевым простоем.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">WooCommerce</div>
+            <div class="badge badge-secondary">SEO</div>
+            <div class="badge badge-accent">Migration</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>0 минут downtime</li>
+              <li>100% сохранение позиций</li>
+              <li>Ускорение на 40%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 2 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Настройка DKIM & Email</h3>
+          <p class="text-sm opacity-80 mb-3">Email Infrastructure • Security</p>
+          <p>Полная настройка email-инфраструктуры с DKIM, SPF, DMARC для улучшения доставляемости писем и защиты от спама.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">DKIM</div>
+            <div class="badge badge-secondary">SPF</div>
+            <div class="badge badge-accent">Security</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>95%+ доставляемость</li>
+              <li>Защита от подделки</li>
+              <li>Репутация домена A+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 3 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-green-500 to-teal-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Оптимизация производительности</h3>
+          <p class="text-sm opacity-80 mb-3">Performance • Optimization</p>
+          <p>Комплексная оптимизация WordPress сайта: от базы данных до настройки кэширования и CDN.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">Redis</div>
+            <div class="badge badge-secondary">CDN</div>
+            <div class="badge badge-accent">Caching</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>Скорость +300%</li>
+              <li>Google PageSpeed 95+</li>
+              <li>Снижение нагрузки 60%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 4 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-orange-500 to-red-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Директория школ Таиланда</h3>
+          <p class="text-sm opacity-80 mb-3">Web Platform • Multilingual</p>
+          <p>Разработка многоязычной платформы-директории школ с фокусом на русский, английский и тайский рынки.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">WordPress</div>
+            <div class="badge badge-secondary">WPML</div>
+            <div class="badge badge-accent">Custom</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>3 языка интерфейса</li>
+              <li>SEO оптимизация</li>
+              <li>$2K MRR цель</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 5 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Кастомизация Kadence</h3>
+          <p class="text-sm opacity-80 mb-3">Theme Development • Design</p>
+          <p>Глубокая кастомизация темы Kadence с созданием уникальных блоков и стилей для корпоративного сайта.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">Kadence</div>
+            <div class="badge badge-secondary">CSS</div>
+            <div class="badge badge-accent">Gutenberg</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>Уникальный дизайн</li>
+              <li>Кастом блоки</li>
+              <li>Адаптивность 100%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 6 -->
+      <div class="card bg-base-100 shadow-xl case-card">
+        <figure class="px-6 pt-6">
+          <div class="bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl p-8 w-full h-48 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body">
+          <h3 class="card-title">Автоматизация с AI</h3>
+          <p class="text-sm opacity-80 mb-3">Automation • AI Integration</p>
+          <p>Интеграция AI-инструментов для автоматизации рутинных задач в WordPress: от контента до технической поддержки.</p>
+          <div class="card-actions justify-start mt-4">
+            <div class="badge badge-primary">GPT-4</div>
+            <div class="badge badge-secondary">Automation</div>
+            <div class="badge badge-accent">API</div>
+          </div>
+          <div class="divider my-2"></div>
+          <div class="text-sm">
+            <div class="flex justify-between mb-1">
+              <span class="font-semibold">Результат:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-1 text-xs opacity-80">
+              <li>Экономия 10+ ч/нед</li>
+              <li>Автоматизация 70%</li>
+              <li>ROI 300%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="skillsTitle">Технологии и инструменты</h2>
+      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto">
+      <!-- WordPress Ecosystem -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          </svg>
+          WordPress Ecosystem
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge badge badge-lg badge-primary">WordPress Core</span>
+          <span class="tech-badge badge badge-lg badge-primary">WooCommerce</span>
+          <span class="tech-badge badge badge-lg badge-primary">Kadence Theme</span>
+          <span class="tech-badge badge badge-lg badge-primary">Astra</span>
+          <span class="tech-badge badge badge-lg badge-primary">Elementor</span>
+          <span class="tech-badge badge badge-lg badge-primary">Gutenberg</span>
+          <span class="tech-badge badge badge-lg badge-primary">WPML</span>
+          <span class="tech-badge badge badge-lg badge-primary">ACF Pro</span>
+          <span class="tech-badge badge badge-lg badge-primary">Yoast SEO</span>
+        </div>
+      </div>
+      
+      <!-- Development -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Development Stack
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge badge badge-lg badge-secondary">PHP 8+</span>
+          <span class="tech-badge badge badge-lg badge-secondary">JavaScript ES6+</span>
+          <span class="tech-badge badge badge-lg badge-secondary">Vue.js</span>
+          <span class="tech-badge badge badge-lg badge-secondary">React</span>
+          <span class="tech-badge badge badge-lg badge-secondary">Node.js</span>
+          <span class="tech-badge badge badge-lg badge-secondary">Python</span>
+          <span class="tech-badge badge badge-lg badge-secondary">Django</span>
+          <span class="tech-badge badge badge-lg badge-secondary">GatsbyJS</span>
+          <span class="tech-badge badge badge-lg badge-secondary">Tailwind CSS</span>
+        </div>
+      </div>
+      
+      <!-- Databases & Caching -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+          </svg>
+          Databases & Caching
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge badge badge-lg badge-accent">MySQL</span>
+          <span class="tech-badge badge badge-lg badge-accent">PostgreSQL</span>
+          <span class="tech-badge badge badge-lg badge-accent">MS SQL</span>
+          <span class="tech-badge badge badge-lg badge-accent">Redis</span>
+          <span class="tech-badge badge badge-lg badge-accent">Memcached</span>
+          <span class="tech-badge badge badge-lg badge-accent">ElasticSearch</span>
+        </div>
+      </div>
+      
+      <!-- DevOps & Hosting -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+          </svg>
+          DevOps & Hosting
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge badge badge-lg badge-info">Git</span>
+          <span class="tech-badge badge badge-lg badge-info">Docker</span>
+          <span class="tech-badge badge badge-lg badge-info">CI/CD</span>
+          <span class="tech-badge badge badge-lg badge-info">Infomaniak</span>
+          <span class="tech-badge badge badge-lg badge-info">Beget</span>
+          <span class="tech-badge badge badge-lg badge-info">AWS</span>
+          <span class="tech-badge badge badge-lg badge-info">Cloudflare</span>
+          <span class="tech-badge badge badge-lg badge-info">Nginx</span>
+          <span class="tech-badge badge badge-lg badge-info">Apache</span>
+        </div>
+      </div>
+      
+      <!-- Tools & Automation -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Tools & Automation
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-badge badge badge-lg badge-success">ChatGPT/Claude</span>
+          <span class="tech-badge badge badge-lg badge-success">Telegram Bots</span>
+          <span class="tech-badge badge badge-lg badge-success">Zapier</span>
+          <span class="tech-badge badge badge-lg badge-success">Make.com</span>
+          <span class="tech-badge badge badge-lg badge-success">Postman</span>
+          <span class="tech-badge badge badge-lg badge-success">VS Code</span>
+          <span class="tech-badge badge badge-lg badge-success">PHPStorm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews" class="py-20 bg-base-200">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="reviewsTitle">Отзывы клиентов</h2>
+      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+      <p class="mt-4 text-lg opacity-80" data-i18n="reviewsSubtitle">Что говорят о моей работе</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Review 1 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-primary text-primary-content rounded-full w-12">
+                <span class="text-xl">АМ</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">Алексей Михайлов</h3>
+              <p class="text-sm opacity-60">CEO, E-commerce компания</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Evgenii провел миграцию нашего магазина с 10,000+ товарами за выходные без единой минуты простоя. 
+            Все SEO позиции сохранены, производительность выросла на 40%. Профессионал высочайшего уровня!"
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Проект: WooCommerce Migration</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review 2 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-secondary text-secondary-content rounded-full w-12">
+                <span class="text-xl">МС</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">Мария Соколова</h3>
+              <p class="text-sm opacity-60">Основатель, Yoga Studio</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Работа с Evgenii - это всегда четкость, прозрачность и качество. Настроил email-инфраструктуру, 
+            доставляемость писем выросла до 95%+. Все вопросы решаются оперативно, документация подробная."
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Проект: DKIM & Email Setup</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review 3 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-accent text-accent-content rounded-full w-12">
+                <span class="text-xl">ДК</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">Дмитрий Козлов</h3>
+              <p class="text-sm opacity-60">Digital Marketing Director</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Evgenii оптимизировал наш WordPress сайт - скорость загрузки увеличилась в 3 раза, 
+            Google PageSpeed показывает 95+. Работает по SCRUM, всегда на связи, результат превзошел ожидания."
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Проект: Performance Optimization</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review 4 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-info text-info-content rounded-full w-12">
+                <span class="text-xl">JB</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">John Bradley</h3>
+              <p class="text-sm opacity-60">Product Owner, SaaS Startup</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme, 
+            created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences."
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Project: Kadence Theme Customization</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review 5 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-success text-success-content rounded-full w-12">
+                <span class="text-xl">ЕП</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">Елена Петрова</h3>
+              <p class="text-sm opacity-60">Владелец, Online School</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Создали многоязычную платформу с нуля. Evgenii продумал архитектуру, внедрил WPML, 
+            настроил SEO для трех языков. Проект стартовал точно в срок. Рекомендую на 100%!"
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Проект: Multilingual Platform</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review 6 -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="avatar placeholder">
+              <div class="bg-warning text-warning-content rounded-full w-12">
+                <span class="text-xl">ИВ</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg">Игорь Волков</h3>
+              <p class="text-sm opacity-60">CTO, FinTech Company</p>
+              <div class="rating rating-sm mt-1">
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+              </div>
+            </div>
+          </div>
+          <p class="leading-relaxed">
+            "Интегрировал AI-автоматизацию в наш WordPress - сэкономили 10+ часов в неделю на рутине. 
+            Evgenii не просто разработчик, а инженер с системным мышлением. ROI проекта составил 300%."
+          </p>
+          <div class="divider my-2"></div>
+          <div class="flex items-center gap-2 text-sm opacity-70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Проект: AI Automation Integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="contactTitle">Свяжитесь со мной</h2>
+      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+      <p class="mt-4 text-lg opacity-80 max-w-2xl mx-auto" data-i18n="contactSubtitle">
+        Готов обсудить ваш проект и предложить эффективное решение
+      </p>
+    </div>
+    
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-2xl mb-4" data-i18n="contactInfoTitle">Контактная информация</h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="bg-primary text-primary-content rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold" data-i18n="contactEmail">Email</p>
+                  <a href="mailto:evgrezanov@gmail.com" class="link link-primary">evgrezanov@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-secondary text-secondary-content rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold" data-i18n="contactLocation">Локация</p>
+                  <p class="opacity-80" data-i18n="contactLocationValue">Bangkok, Thailand 🇹🇭</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-accent text-accent-content rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold" data-i18n="contactTimezone">Часовой пояс</p>
+                  <p class="opacity-80" data-i18n="contactTimezoneValue">UTC+7 (Asia/Bangkok)</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-info text-info-content rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold" data-i18n="contactWebsite">Website</p>
+                  <a href="https://wpcraft.ru" target="_blank" class="link link-primary">wpcraft.ru</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <h4 class="font-bold text-lg mb-3" data-i18n="contactSocialTitle">Социальные сети</h4>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://www.linkedin.com/in/evgeniy-rezanov" target="_blank" class="btn btn-circle btn-outline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://github.com/evgrezanov" target="_blank" class="btn btn-circle btn-outline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://stackoverflow.com/users/4472869/eredmonkey" target="_blank" class="btn btn-circle btn-outline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.936v.014zm2.715-4.785l8.217 6.855 1.359-1.62-8.216-6.853-1.35 1.617-.01.001zM15.751 0l-1.746 1.294 6.405 8.604 1.746-1.294L15.749 0h.002z"/></svg>
+              </a>
+              <a href="https://x.com/ERedmonkey" target="_blank" class="btn btn-circle btn-outline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title text-xl" data-i18n="contactCTATitle">💡 Готовы начать проект?</h3>
+            <p class="opacity-90" data-i18n="contactCTADesc">
+              Забронируйте бесплатную 30-минутную консультацию, и мы обсудим ваши задачи
+            </p>
+            <div class="card-actions justify-start mt-4">
+              <a href="https://calendly.com/eredmonkey/30min" target="_blank" class="btn btn-neutral btn-block gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span data-i18n="contactCTAButton">Выбрать удобное время</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title text-2xl mb-4" data-i18n="contactFormTitle">Отправить сообщение</h3>
+          
+          <form class="space-y-4" onsubmit="handleFormSubmit(event)">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-semibold" data-i18n="contactFormName">Ваше имя</span>
+              </label>
+              <input type="text" data-i18n="contactFormNamePlaceholder" placeholder="Иван Иванов" class="input input-bordered" required />
+            </div>
+            
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-semibold" data-i18n="contactFormEmail">Email</span>
+              </label>
+              <input type="email" data-i18n="contactFormEmailPlaceholder" placeholder="ivan@example.com" class="input input-bordered" required />
+            </div>
+            
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-semibold" data-i18n="contactFormProjectType">Тип проекта</span>
+              </label>
+              <select class="select select-bordered" required>
+                <option disabled selected data-i18n="contactFormProjectTypePlaceholder">Выберите тип проекта</option>
+                <option data-i18n="contactFormProjectType1">Миграция WordPress</option>
+                <option data-i18n="contactFormProjectType2">WooCommerce e-commerce</option>
+                <option data-i18n="contactFormProjectType3">Оптимизация производительности</option>
+                <option data-i18n="contactFormProjectType4">Кастомизация темы/плагина</option>
+                <option data-i18n="contactFormProjectType5">Техническая поддержка</option>
+                <option data-i18n="contactFormProjectType6">Другое</option>
+              </select>
+            </div>
+            
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-semibold" data-i18n="contactFormBudget">Бюджет</span>
+              </label>
+              <select class="select select-bordered" required>
+                <option disabled selected data-i18n="contactFormBudgetPlaceholder">Выберите диапазон</option>
+                <option>< $1,000</option>
+                <option>$1,000 - $3,000</option>
+                <option>$3,000 - $5,000</option>
+                <option>$5,000 - $10,000</option>
+                <option>> $10,000</option>
+              </select>
+            </div>
+            
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text font-semibold" data-i18n="contactFormMessage">Сообщение</span>
+              </label>
+              <textarea class="textarea textarea-bordered h-32" data-i18n="contactFormMessagePlaceholder" placeholder="Расскажите о вашем проекте..." required></textarea>
+            </div>
+            
+            <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary btn-block gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span data-i18n="contactFormSubmit">Отправить сообщение</span>
+              </button>
+            </div>
+          </form>
+          
+          <div class="alert alert-info mt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-sm" data-i18n="contactFormNote">Отвечу в течение 24 часов (обычно быстрее)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer footer-center p-10 bg-base-200 text-base-content">
+  <div>
+    <a class="font-bold text-2xl gradient-text" data-i18n="brand">wpcraft.ru</a>
+    <p class="font-semibold" data-i18n="footerTagline">Evgenii Rezanov — Senior WordPress Developer & Team Lead</p>
+    <p class="opacity-70" data-i18n="footerLocation">Based in Bangkok 🇹🇭 • Serving clients worldwide 🌍</p>
+  </div>
+  
+  <div>
+    <div class="grid grid-flow-col gap-4">
+      <a href="https://github.com/evgrezanov" target="_blank" class="link link-hover">GitHub</a>
+      <a href="https://www.linkedin.com/in/evgeniy-rezanov" target="_blank" class="link link-hover">LinkedIn</a>
+      <a href="https://stackoverflow.com/users/4472869/eredmonkey" target="_blank" class="link link-hover">Stack Overflow</a>
+      <a href="https://eredmonkey.link" target="_blank" class="link link-hover">Profile Links</a>
+    </div>
+  </div>
+  
+  <div class="flex items-center gap-2">
+    <span class="opacity-70">Bitcoin:</span>
+    <code class="text-xs bg-base-300 px-2 py-1 rounded">16j3zySeDu2CcmxExpeDTtVVbS1ppvyDmD</code>
+  </div>
+  
+  <div>
+    <p class="text-sm opacity-60" data-i18n="footerCopyright">© 2026 wpcraft.ru. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Translations
+  const translations = {
+    ru: {
+      brand: 'wpcraft.ru',
+      // Navigation
+      navAbout: 'Обо мне',
+      navCases: 'Кейсы',
+      navSkills: 'Навыки',
+      navReviews: 'Отзывы',
+      navContact: 'Контакты',
+      
+      // Hero
+      heroGreeting: '👋 Привет, я',
+      heroTitle: 'Senior WordPress Developer & Team Lead',
+      heroDescription: 'Помогаю бизнесам мигрировать на WordPress без потери данных и SEO позиций. Специализация: WooCommerce e-commerce и технические оптимизации для международных клиентов.',
+      statMigrations: 'Успешных миграций',
+      statExperience: 'Лет опыта',
+      statClients: 'Довольных клиентов',
+      ctaBooking: 'Забронировать встречу',
+      ctaUpwork: 'Нанять на Upwork',
+      
+      // About
+      aboutTitle: 'Обо мне',
+      aboutExpertiseTitle: 'Моя экспертиза',
+      aboutExpertise1: 'WordPress миграции любой сложности без простоев',
+      aboutExpertise2: 'WooCommerce интеграции и оптимизация производительности',
+      aboutExpertise3: 'Техническое SEO и настройка email-инфраструктуры (DKIM, SPF)',
+      aboutExpertise4: 'Кастомизация тем (Kadence, Astra) и плагинов',
+      aboutExpertise5: 'Интеграция с платформами (Infomaniak, Beget, и др.)',
+      aboutApproachTitle: 'Подход к работе',
+      aboutApproach1: 'Работаю по методологии SCRUM с прозрачными спринтами и регулярной коммуникацией. Каждый проект начинается с детального анализа требований и заканчивается полной технической документацией.',
+      aboutApproach2: 'Специализируюсь на работе с международными клиентами, обеспечивая поддержку 24/7 и гарантируя качество на каждом этапе разработки.',
+      
+      // Cases
+      casesTitle: 'Кейсы и проекты',
+      casesSubtitle: 'Реальные примеры решенных задач для бизнеса',
+      case1Title: 'Миграция интернет-магазина',
+      case1Type: 'E-commerce • WooCommerce',
+      case1Desc: 'Миграция магазина с 10,000+ товарами на новую платформу с сохранением всех SEO позиций и нулевым простоем.',
+      case1Result: 'Результат:',
+      case1Result1: '0 минут downtime',
+      case1Result2: '100% сохранение позиций',
+      case1Result3: 'Ускорение на 40%',
+      case2Title: 'Настройка DKIM & Email',
+      case2Type: 'Email Infrastructure • Security',
+      case2Desc: 'Полная настройка email-инфраструктуры с DKIM, SPF, DMARC для улучшения доставляемости писем и защиты от спама.',
+      case2Result1: '95%+ доставляемость',
+      case2Result2: 'Защита от подделки',
+      case2Result3: 'Репутация домена A+',
+      case3Title: 'Оптимизация производительности',
+      case3Type: 'Performance • Optimization',
+      case3Desc: 'Комплексная оптимизация WordPress сайта: от базы данных до настройки кэширования и CDN.',
+      case3Result1: 'Скорость +300%',
+      case3Result2: 'Google PageSpeed 95+',
+      case3Result3: 'Снижение нагрузки 60%',
+      case4Title: 'Директория школ Таиланда',
+      case4Type: 'Web Platform • Multilingual',
+      case4Desc: 'Разработка многоязычной платформы-директории школ с фокусом на русский, английский и тайский рынки.',
+      case4Result1: '3 языка интерфейса',
+      case4Result2: 'SEO оптимизация',
+      case4Result3: '$2K MRR цель',
+      case5Title: 'Кастомизация Kadence',
+      case5Type: 'Theme Development • Design',
+      case5Desc: 'Глубокая кастомизация темы Kadence с созданием уникальных блоков и стилей для корпоративного сайта.',
+      case5Result1: 'Уникальный дизайн',
+      case5Result2: 'Кастом блоки',
+      case5Result3: 'Адаптивность 100%',
+      case6Title: 'Автоматизация с AI',
+      case6Type: 'Automation • AI Integration',
+      case6Desc: 'Интеграция AI-инструментов для автоматизации рутинных задач в WordPress: от контента до технической поддержки.',
+      case6Result1: 'Экономия 10+ ч/нед',
+      case6Result2: 'Автоматизация 70%',
+      case6Result3: 'ROI 300%',
+      
+      // Skills
+      skillsTitle: 'Технологии и инструменты',
+      
+      // Reviews
+      reviewsTitle: 'Отзывы клиентов',
+      reviewsSubtitle: 'Что говорят о моей работе',
+      review1Text: 'Evgenii провел миграцию нашего магазина с 10,000+ товарами за выходные без единой минуты простоя. Все SEO позиции сохранены, производительность выросла на 40%. Профессионал высочайшего уровня!',
+      review1Project: 'Проект: WooCommerce Migration',
+      review2Text: 'Работа с Evgenii - это всегда четкость, прозрачность и качество. Настроил email-инфраструктуру, доставляемость писем выросла до 95%+. Все вопросы решаются оперативно, документация подробная.',
+      review2Project: 'Проект: DKIM & Email Setup',
+      review3Text: 'Evgenii оптимизировал наш WordPress сайт - скорость загрузки увеличилась в 3 раза, Google PageSpeed показывает 95+. Работает по SCRUM, всегда на связи, результат превзошел ожидания.',
+      review3Project: 'Проект: Performance Optimization',
+      review4Text: 'Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme, created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences.',
+      review4Project: 'Project: Kadence Theme Customization',
+      review5Text: 'Создали многоязычную платформу с нуля. Evgenii продумал архитектуру, внедрил WPML, настроил SEO для трех языков. Проект стартовал точно в срок. Рекомендую на 100%!',
+      review5Project: 'Проект: Multilingual Platform',
+      review6Text: 'Интегрировал AI-автоматизацию в наш WordPress - сэкономили 10+ часов в неделю на рутине. Evgenii не просто разработчик, а инженер с системным мышлением. ROI проекта составил 300%.',
+      review6Project: 'Проект: AI Automation Integration',
+      
+      // Contact
+      contactTitle: 'Свяжитесь со мной',
+      contactSubtitle: 'Готов обсудить ваш проект и предложить эффективное решение',
+      contactInfoTitle: 'Контактная информация',
+      contactEmail: 'Email',
+      contactLocation: 'Локация',
+      contactLocationValue: 'Bangkok, Thailand 🇹🇭',
+      contactTimezone: 'Часовой пояс',
+      contactTimezoneValue: 'UTC+7 (Asia/Bangkok)',
+      contactWebsite: 'Website',
+      contactSocialTitle: 'Социальные сети',
+      contactCTATitle: '💡 Готовы начать проект?',
+      contactCTADesc: 'Забронируйте бесплатную 30-минутную консультацию, и мы обсудим ваши задачи',
+      contactCTAButton: 'Выбрать удобное время',
+      contactFormTitle: 'Отправить сообщение',
+      contactFormName: 'Ваше имя',
+      contactFormNamePlaceholder: 'Иван Иванов',
+      contactFormEmail: 'Email',
+      contactFormEmailPlaceholder: 'ivan@example.com',
+      contactFormProjectType: 'Тип проекта',
+      contactFormProjectTypePlaceholder: 'Выберите тип проекта',
+      contactFormProjectType1: 'Миграция WordPress',
+      contactFormProjectType2: 'WooCommerce e-commerce',
+      contactFormProjectType3: 'Оптимизация производительности',
+      contactFormProjectType4: 'Кастомизация темы/плагина',
+      contactFormProjectType5: 'Техническая поддержка',
+      contactFormProjectType6: 'Другое',
+      contactFormBudget: 'Бюджет',
+      contactFormBudgetPlaceholder: 'Выберите диапазон',
+      contactFormMessage: 'Сообщение',
+      contactFormMessagePlaceholder: 'Расскажите о вашем проекте...',
+      contactFormSubmit: 'Отправить сообщение',
+      contactFormNote: 'Отвечу в течение 24 часов (обычно быстрее)',
+      
+      // Footer
+      footerTagline: 'Evgenii Rezanov — Senior WordPress Developer & Team Lead',
+      footerLocation: 'Based in Bangkok 🇹🇭 • Serving clients worldwide 🌍',
+      footerCopyright: '© 2026 wpcraft.ru. All rights reserved.'
+    },
+    
+    en: {
+      brand: 'wpcraft.ru',
+      // Navigation
+      navAbout: 'About',
+      navCases: 'Cases',
+      navSkills: 'Skills',
+      navReviews: 'Reviews',
+      navContact: 'Contact',
+      
+      // Hero
+      heroGreeting: '👋 Hi, I\'m',
+      heroTitle: 'Senior WordPress Developer & Team Lead',
+      heroDescription: 'I help businesses migrate to WordPress without data loss or SEO penalties. Specialization: WooCommerce e-commerce and technical optimizations for international clients.',
+      statMigrations: 'Successful Migrations',
+      statExperience: 'Years of Experience',
+      statClients: 'Happy Clients',
+      ctaBooking: 'Book a Meeting',
+      ctaUpwork: 'Hire on Upwork',
+      
+      // About
+      aboutTitle: 'About Me',
+      aboutExpertiseTitle: 'My Expertise',
+      aboutExpertise1: 'WordPress migrations of any complexity with zero downtime',
+      aboutExpertise2: 'WooCommerce integrations and performance optimization',
+      aboutExpertise3: 'Technical SEO and email infrastructure setup (DKIM, SPF)',
+      aboutExpertise4: 'Theme customization (Kadence, Astra) and plugin development',
+      aboutExpertise5: 'Platform integrations (Infomaniak, Beget, and others)',
+      aboutApproachTitle: 'Work Approach',
+      aboutApproach1: 'I work using SCRUM methodology with transparent sprints and regular communication. Every project starts with detailed requirements analysis and ends with complete technical documentation.',
+      aboutApproach2: 'I specialize in working with international clients, providing 24/7 support and ensuring quality at every development stage.',
+      
+      // Cases
+      casesTitle: 'Cases & Projects',
+      casesSubtitle: 'Real examples of business solutions',
+      case1Title: 'E-commerce Store Migration',
+      case1Type: 'E-commerce • WooCommerce',
+      case1Desc: 'Migrated a store with 10,000+ products to a new platform while preserving all SEO positions with zero downtime.',
+      case1Result: 'Results:',
+      case1Result1: '0 minutes downtime',
+      case1Result2: '100% SEO preserved',
+      case1Result3: '40% speed increase',
+      case2Title: 'DKIM & Email Setup',
+      case2Type: 'Email Infrastructure • Security',
+      case2Desc: 'Complete email infrastructure setup with DKIM, SPF, DMARC to improve deliverability and prevent spam.',
+      case2Result1: '95%+ deliverability',
+      case2Result2: 'Spoofing protection',
+      case2Result3: 'Domain reputation A+',
+      case3Title: 'Performance Optimization',
+      case3Type: 'Performance • Optimization',
+      case3Desc: 'Comprehensive WordPress optimization: from database to caching and CDN configuration.',
+      case3Result1: 'Speed +300%',
+      case3Result2: 'Google PageSpeed 95+',
+      case3Result3: '60% load reduction',
+      case4Title: 'Thailand School Directory',
+      case4Type: 'Web Platform • Multilingual',
+      case4Desc: 'Development of a multilingual school directory platform focusing on Russian, English, and Thai markets.',
+      case4Result1: '3 language interfaces',
+      case4Result2: 'SEO optimization',
+      case4Result3: '$2K MRR target',
+      case5Title: 'Kadence Customization',
+      case5Type: 'Theme Development • Design',
+      case5Desc: 'Deep Kadence theme customization with unique blocks and styles for a corporate website.',
+      case5Result1: 'Unique design',
+      case5Result2: 'Custom blocks',
+      case5Result3: '100% responsive',
+      case6Title: 'AI Automation',
+      case6Type: 'Automation • AI Integration',
+      case6Desc: 'AI tools integration to automate routine WordPress tasks: from content to technical support.',
+      case6Result1: 'Saved 10+ hrs/week',
+      case6Result2: '70% automation',
+      case6Result3: '300% ROI',
+      
+      // Skills
+      skillsTitle: 'Technologies & Tools',
+      
+      // Reviews
+      reviewsTitle: 'Client Reviews',
+      reviewsSubtitle: 'What clients say about my work',
+      review1Text: 'Evgenii migrated our store with 10,000+ products over the weekend without a single minute of downtime. All SEO positions preserved, performance increased by 40%. Top-tier professional!',
+      review1Project: 'Project: WooCommerce Migration',
+      review2Text: 'Working with Evgenii means clarity, transparency, and quality. He set up our email infrastructure, deliverability increased to 95%+. All issues resolved promptly, documentation is thorough.',
+      review2Project: 'Project: DKIM & Email Setup',
+      review3Text: 'Evgenii optimized our WordPress site - loading speed increased 3x, Google PageSpeed shows 95+. Works with SCRUM, always available, results exceeded expectations.',
+      review3Project: 'Project: Performance Optimization',
+      review4Text: 'Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme, created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences.',
+      review4Project: 'Project: Kadence Theme Customization',
+      review5Text: 'Built a multilingual platform from scratch. Evgenii designed the architecture, implemented WPML, configured SEO for three languages. Project launched right on schedule. 100% recommend!',
+      review5Project: 'Project: Multilingual Platform',
+      review6Text: 'Integrated AI automation into our WordPress - saved 10+ hours per week on routine tasks. Evgenii isn\'t just a developer, but an engineer with systems thinking. Project ROI was 300%.',
+      review6Project: 'Project: AI Automation Integration',
+      
+      // Contact
+      contactTitle: 'Get In Touch',
+      contactSubtitle: 'Ready to discuss your project and offer an effective solution',
+      contactInfoTitle: 'Contact Information',
+      contactEmail: 'Email',
+      contactLocation: 'Location',
+      contactLocationValue: 'Bangkok, Thailand 🇹🇭',
+      contactTimezone: 'Timezone',
+      contactTimezoneValue: 'UTC+7 (Asia/Bangkok)',
+      contactWebsite: 'Website',
+      contactSocialTitle: 'Social Media',
+      contactCTATitle: '💡 Ready to start a project?',
+      contactCTADesc: 'Book a free 30-minute consultation and we\'ll discuss your needs',
+      contactCTAButton: 'Choose a convenient time',
+      contactFormTitle: 'Send a Message',
+      contactFormName: 'Your Name',
+      contactFormNamePlaceholder: 'John Doe',
+      contactFormEmail: 'Email',
+      contactFormEmailPlaceholder: 'john@example.com',
+      contactFormProjectType: 'Project Type',
+      contactFormProjectTypePlaceholder: 'Choose project type',
+      contactFormProjectType1: 'WordPress Migration',
+      contactFormProjectType2: 'WooCommerce E-commerce',
+      contactFormProjectType3: 'Performance Optimization',
+      contactFormProjectType4: 'Theme/Plugin Customization',
+      contactFormProjectType5: 'Technical Support',
+      contactFormProjectType6: 'Other',
+      contactFormBudget: 'Budget',
+      contactFormBudgetPlaceholder: 'Select range',
+      contactFormMessage: 'Message',
+      contactFormMessagePlaceholder: 'Tell me about your project...',
+      contactFormSubmit: 'Send Message',
+      contactFormNote: 'I\'ll respond within 24 hours (usually faster)',
+      
+      // Footer
+      footerTagline: 'Evgenii Rezanov — Senior WordPress Developer & Team Lead',
+      footerLocation: 'Based in Bangkok 🇹🇭 • Serving clients worldwide 🌍',
+      footerCopyright: '© 2026 wpcraft.ru. All rights reserved.'
+    }
+  };
+  
+  // Language switcher
+  let currentLang = localStorage.getItem('language') || 'ru';
+  
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update typing animation
+    const typingImg = document.getElementById('typing-animation');
+    if (typingImg) {
+      if (lang === 'ru') {
+        typingImg.src = 'https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=23&pause=1000&color=667eea&width=500&lines=Full-stack+разработчик;Team+Lead;WordPress+Plugin+разработчик;Sr.+%22космические+корабли+на+WP%22';
+      } else {
+        typingImg.src = 'https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=23&pause=1000&color=667eea&width=500&lines=Full-stack+Software+Dev;Team+Lead;WordPress+Plugin+developer;Sr.+%22spaceships+based+on+WP%22';
+      }
+    }
+    
+    // Update all translatable elements
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translation = translations[lang] && translations[lang][key];
+      
+      if (translation) {
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+          element.placeholder = translation;
+        } else if (element.tagName === 'OPTION') {
+          element.textContent = translation;
+        } else if (element.tagName === 'SPAN' || element.tagName === 'A') {
+          element.textContent = translation;
+        } else {
+          element.innerHTML = translation;
+        }
+      }
+    });
+    
+    // Update page title
+    if (lang === 'ru') {
+      document.title = 'Evgenii Rezanov — Senior WordPress Developer | Миграции & WooCommerce';
+    } else {
+      document.title = 'Evgenii Rezanov — Senior WordPress Developer | Migrations & WooCommerce';
+    }
+    
+    console.log('Language switched to:', lang);
+  }
+  
+  // Initialize language on load
+  // Also make setLanguage available globally
+  window.setLanguage = setLanguage;
+  
+  // Theme Toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    // Update data-theme attribute for DaisyUI
+    html.setAttribute('data-theme', newTheme);
+    
+    // Also update class for compatibility
+    if (newTheme === 'dark') {
+      html.classList.add('dark');
+      html.classList.remove('light');
+    } else {
+      html.classList.add('light');
+      html.classList.remove('dark');
+    }
+    
+    localStorage.setItem('theme', newTheme);
+    
+    // Update icon
+    const icon = document.getElementById('theme-icon');
+    if (icon) {
+      if (newTheme === 'dark') {
+        // Moon icon for dark mode
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+      } else {
+        // Sun icon for light mode
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
+      }
+    }
+    
+    console.log('Theme switched to:', newTheme);
+  }
+  
+  // Make toggleTheme available globally
+  window.toggleTheme = toggleTheme;
+  
+  // Initialize everything on page load
+  window.addEventListener('DOMContentLoaded', function() {
+    // Initialize language
+    setLanguage(currentLang);
+    
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const html = document.documentElement;
+    
+    html.setAttribute('data-theme', savedTheme);
+    
+    if (savedTheme === 'dark') {
+      html.classList.add('dark');
+      html.classList.remove('light');
+    } else {
+      html.classList.add('light');
+      html.classList.remove('dark');
+    }
+    
+    // Update icon based on saved theme
+    const icon = document.getElementById('theme-icon');
+    if (icon) {
+      if (savedTheme === 'dark') {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+      } else {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
+      }
+    }
+  });
+  
+  // Form Submit Handler
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    const message = currentLang === 'ru' 
+      ? 'Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.'
+      : 'Thank you for your message! I\'ll get back to you soon.';
+    alert(message);
+    event.target.reset();
+  }
+  
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
