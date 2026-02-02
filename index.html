@@ -215,6 +215,70 @@
     .smooth-scroll {
       scroll-behavior: smooth;
     }
+
+    /* Upwork button styling - green/white colors */
+    .btn-upwork {
+      background-color: #14a800 !important;
+      border-color: #14a800 !important;
+      color: #ffffff !important;
+    }
+
+    .btn-upwork:hover {
+      background-color: #108a00 !important;
+      border-color: #108a00 !important;
+      color: #ffffff !important;
+    }
+
+    .btn-upwork svg {
+      fill: #ffffff !important;
+    }
+
+    /* Book a Meeting button - light theme: outline with black text */
+    [data-theme="light"] .btn-book-meeting {
+      background-color: transparent !important;
+      border: 2px solid #1f2937 !important;
+      color: #1f2937 !important;
+    }
+
+    [data-theme="light"] .btn-book-meeting:hover {
+      background-color: #1f2937 !important;
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .btn-book-meeting svg {
+      stroke: currentColor;
+    }
+
+    /* Reviews Carousel Styles */
+    .reviews-carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0 2rem;
+    }
+
+    .reviews-carousel {
+      display: flex;
+      gap: 2rem;
+      transition: transform 0.5s ease-in-out;
+      transform: translateX(-200px); /* Initial offset to show first card partially */
+    }
+
+    .review-card {
+      flex-shrink: 0;
+      width: 450px;
+      min-height: 380px;
+    }
+
+    @media (max-width: 640px) {
+      .review-card {
+        width: 320px;
+        min-height: 420px;
+      }
+
+      .reviews-carousel {
+        transform: translateX(-100px); /* Smaller offset on mobile */
+      }
+    }
   </style>
 </head>
 
@@ -285,18 +349,14 @@
       <h1 class="text-5xl lg:text-6xl font-bold mb-6">
         <span data-i18n="heroGreeting">👋 Привет, я</span> <span class="gradient-text">Evgenii</span>
       </h1>
-      
-      <!-- Typing Animation -->
-      <div class="mb-6 flex justify-center">
-        <img id="typing-animation" 
-             src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=23&pause=1000&color=667eea&width=500&lines=Full-stack+разработчик;Team+Lead;WordPress+Plugin+разработчик;Sr.+%22космические+корабли+на+WP%22" 
-             alt="Typing SVG" 
+
+      <!-- Typing Animation - replacing static title -->
+      <div class="mb-4 flex justify-center lg:justify-start">
+        <img id="typing-animation"
+             src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=667eea&width=550&lines=Sr.+Software+Engineer;WordPress+Plugin+Developer;Team+Lead+with+focus+on+Business+value;Full+Stack+Web+Developer;Sr.+Spaceship+based+at+WordPress;Senior+WordPress+Developer+%26+Team+Lead"
+             alt="Typing SVG"
              class="max-w-full h-auto" />
       </div>
-      
-      <p class="text-2xl font-semibold mb-4" data-i18n="heroTitle">
-        Senior WordPress Developer & Team Lead
-      </p>
       <p class="text-lg mb-6 opacity-80" data-i18n="heroDescription">
         Помогаю бизнесам мигрировать на WordPress без потери данных и SEO позиций. 
         Специализация: WooCommerce e-commerce и технические оптимизации для международных клиентов.
@@ -320,15 +380,15 @@
       
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <a href="https://calendly.com/eredmonkey/30min" target="_blank" class="btn btn-primary btn-lg gap-2">
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1vWd2QvJmR3jUj4hkxG5oIkPQBxRtzdupkelhwa5UqqY-2HFjG-rqmd27UDPMXynJ2tr93bi76?gv=true" target="_blank" class="btn btn-primary btn-lg gap-2 btn-book-meeting">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
           <span data-i18n="ctaBooking">Забронировать встречу</span>
         </a>
-        <a href="https://www.upwork.com/freelancers/~your-upwork-id" target="_blank" class="btn btn-outline btn-lg gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <a href="https://www.upwork.com/freelancers/~01ea58721977099d53" target="_blank" class="btn btn-lg gap-2 btn-upwork">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
           </svg>
           <span data-i18n="ctaUpwork">Нанять на Upwork</span>
         </a>
@@ -740,221 +800,473 @@
 </section>
 
 <!-- Reviews Section -->
-<section id="reviews" class="py-20 bg-base-200">
+<section id="reviews" class="py-20 bg-base-200 overflow-hidden">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="reviewsTitle">Отзывы клиентов</h2>
-      <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-      <p class="mt-4 text-lg opacity-80" data-i18n="reviewsSubtitle">Что говорят о моей работе</p>
+    <div class="flex justify-between items-start mb-12">
+      <div>
+        <h2 class="text-4xl font-bold mb-4 gradient-text" data-i18n="reviewsTitle">Отзывы клиентов</h2>
+        <div class="w-20 h-1 bg-primary rounded-full"></div>
+        <p class="mt-4 text-lg opacity-80" data-i18n="reviewsSubtitle">Что говорят о моей работе</p>
+      </div>
+      <div class="flex gap-4">
+        <button id="reviews-prev" class="btn btn-lg btn-outline btn-primary w-16 h-16" aria-label="Previous review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="reviews-next" class="btn btn-lg btn-primary w-16 h-16" aria-label="Next review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  </div>
+
+  <!-- Carousel Container -->
+  <div class="reviews-carousel-wrapper">
+    <div class="reviews-carousel">
       <!-- Review 1 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-primary text-primary-content rounded-full w-12">
-                <span class="text-xl">АМ</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-primary text-primary-content rounded-full w-16">
+                  <span class="text-2xl">АМ</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Алексей Михайлов</h3>
+                <p class="text-sm opacity-60">CEO, E-commerce компания</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">Алексей Михайлов</h3>
-              <p class="text-sm opacity-60">CEO, E-commerce компания</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Evgenii провел миграцию нашего магазина с 10,000+ товарами за выходные без единой минуты простоя.
+              Все SEO позиции сохранены, производительность выросла на 40%. Профессионал высочайшего уровня!"
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: WooCommerce Migration</span>
             </div>
-          </div>
-          <p class="leading-relaxed">
-            "Evgenii провел миграцию нашего магазина с 10,000+ товарами за выходные без единой минуты простоя. 
-            Все SEO позиции сохранены, производительность выросла на 40%. Профессионал высочайшего уровня!"
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Проект: WooCommerce Migration</span>
           </div>
         </div>
       </div>
-      
+
       <!-- Review 2 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-secondary text-secondary-content rounded-full w-12">
-                <span class="text-xl">МС</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-secondary text-secondary-content rounded-full w-16">
+                  <span class="text-2xl">МС</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Мария Соколова</h3>
+                <p class="text-sm opacity-60">Основатель, Yoga Studio</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">Мария Соколова</h3>
-              <p class="text-sm opacity-60">Основатель, Yoga Studio</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Работа с Evgenii - это всегда четкость, прозрачность и качество. Настроил email-инфраструктуру,
+              доставляемость писем выросла до 95%+. Все вопросы решаются оперативно, документация подробная."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: DKIM & Email Setup</span>
             </div>
-          </div>
-          <p class="leading-relaxed">
-            "Работа с Evgenii - это всегда четкость, прозрачность и качество. Настроил email-инфраструктуру, 
-            доставляемость писем выросла до 95%+. Все вопросы решаются оперативно, документация подробная."
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Проект: DKIM & Email Setup</span>
           </div>
         </div>
       </div>
-      
+
       <!-- Review 3 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-accent text-accent-content rounded-full w-12">
-                <span class="text-xl">ДК</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-accent text-accent-content rounded-full w-16">
+                  <span class="text-2xl">ДК</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Дмитрий Козлов</h3>
+                <p class="text-sm opacity-60">Digital Marketing Director</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">Дмитрий Козлов</h3>
-              <p class="text-sm opacity-60">Digital Marketing Director</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Evgenii оптимизировал наш WordPress сайт - скорость загрузки увеличилась в 3 раза,
+              Google PageSpeed показывает 95+. Работает по SCRUM, всегда на связи, результат превзошел ожидания."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: Performance Optimization</span>
             </div>
-          </div>
-          <p class="leading-relaxed">
-            "Evgenii оптимизировал наш WordPress сайт - скорость загрузки увеличилась в 3 раза, 
-            Google PageSpeed показывает 95+. Работает по SCRUM, всегда на связи, результат превзошел ожидания."
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Проект: Performance Optimization</span>
           </div>
         </div>
       </div>
-      
+
       <!-- Review 4 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-info text-info-content rounded-full w-12">
-                <span class="text-xl">JB</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-info text-info-content rounded-full w-16">
+                  <span class="text-2xl">JB</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">John Bradley</h3>
+                <p class="text-sm opacity-60">Product Owner, SaaS Startup</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">John Bradley</h3>
-              <p class="text-sm opacity-60">Product Owner, SaaS Startup</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme,
+              created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Project: Kadence Theme Customization</span>
             </div>
-          </div>
-          <p class="leading-relaxed">
-            "Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme, 
-            created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences."
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Project: Kadence Theme Customization</span>
           </div>
         </div>
       </div>
-      
+
       <!-- Review 5 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-success text-success-content rounded-full w-12">
-                <span class="text-xl">ЕП</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-success text-success-content rounded-full w-16">
+                  <span class="text-2xl">ЕП</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Елена Петрова</h3>
+                <p class="text-sm opacity-60">Владелец, Online School</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">Елена Петрова</h3>
-              <p class="text-sm opacity-60">Владелец, Online School</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Создали многоязычную платформу с нуля. Evgenii продумал архитектуру, внедрил WPML,
+              настроил SEO для трех языков. Проект стартовал точно в срок. Рекомендую на 100%!"
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: Multilingual Platform</span>
             </div>
-          </div>
-          <p class="leading-relaxed">
-            "Создали многоязычную платформу с нуля. Evgenii продумал архитектуру, внедрил WPML, 
-            настроил SEO для трех языков. Проект стартовал точно в срок. Рекомендую на 100%!"
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Проект: Multilingual Platform</span>
           </div>
         </div>
       </div>
-      
+
       <!-- Review 6 -->
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
-          <div class="flex items-start gap-4 mb-4">
-            <div class="avatar placeholder">
-              <div class="bg-warning text-warning-content rounded-full w-12">
-                <span class="text-xl">ИВ</span>
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-warning text-warning-content rounded-full w-16">
+                  <span class="text-2xl">ИВ</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Игорь Волков</h3>
+                <p class="text-sm opacity-60">CTO, FinTech Company</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
               </div>
             </div>
-            <div class="flex-1">
-              <h3 class="font-bold text-lg">Игорь Волков</h3>
-              <p class="text-sm opacity-60">CTO, FinTech Company</p>
-              <div class="rating rating-sm mt-1">
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-                <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
-              </div>
+            <p class="leading-relaxed text-lg">
+              "Интегрировал AI-автоматизацию в наш WordPress - сэкономили 10+ часов в неделю на рутине.
+              Evgenii не просто разработчик, а инженер с системным мышлением. ROI проекта составил 300%."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: AI Automation Integration</span>
             </div>
           </div>
-          <p class="leading-relaxed">
-            "Интегрировал AI-автоматизацию в наш WordPress - сэкономили 10+ часов в неделю на рутине. 
-            Evgenii не просто разработчик, а инженер с системным мышлением. ROI проекта составил 300%."
-          </p>
-          <div class="divider my-2"></div>
-          <div class="flex items-center gap-2 text-sm opacity-70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Проект: AI Automation Integration</span>
+        </div>
+      </div>
+
+      <!-- Duplicate cards for seamless infinite scroll -->
+      <!-- Review 1 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-primary text-primary-content rounded-full w-16">
+                  <span class="text-2xl">АМ</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Алексей Михайлов</h3>
+                <p class="text-sm opacity-60">CEO, E-commerce компания</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Evgenii провел миграцию нашего магазина с 10,000+ товарами за выходные без единой минуты простоя.
+              Все SEO позиции сохранены, производительность выросла на 40%. Профессионал высочайшего уровня!"
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: WooCommerce Migration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-secondary text-secondary-content rounded-full w-16">
+                  <span class="text-2xl">МС</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Мария Соколова</h3>
+                <p class="text-sm opacity-60">Основатель, Yoga Studio</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Работа с Evgenii - это всегда четкость, прозрачность и качество. Настроил email-инфраструктуру,
+              доставляемость писем выросла до 95%+. Все вопросы решаются оперативно, документация подробная."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: DKIM & Email Setup</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-accent text-accent-content rounded-full w-16">
+                  <span class="text-2xl">ДК</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Дмитрий Козлов</h3>
+                <p class="text-sm opacity-60">Digital Marketing Director</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Evgenii оптимизировал наш WordPress сайт - скорость загрузки увеличилась в 3 раза,
+              Google PageSpeed показывает 95+. Работает по SCRUM, всегда на связи, результат превзошел ожидания."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: Performance Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 4 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-info text-info-content rounded-full w-16">
+                  <span class="text-2xl">JB</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">John Bradley</h3>
+                <p class="text-sm opacity-60">Product Owner, SaaS Startup</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Excellent WordPress developer with deep technical knowledge. Evgenii customized our Kadence theme,
+              created unique Gutenberg blocks, and delivered everything on time. Communication was smooth despite timezone differences."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Project: Kadence Theme Customization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 5 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-success text-success-content rounded-full w-16">
+                  <span class="text-2xl">ЕП</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Елена Петрова</h3>
+                <p class="text-sm opacity-60">Владелец, Online School</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Создали многоязычную платформу с нуля. Evgenii продумал архитектуру, внедрил WPML,
+              настроил SEO для трех языков. Проект стартовал точно в срок. Рекомендую на 100%!"
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: Multilingual Platform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 6 duplicate -->
+      <div class="review-card">
+        <div class="card bg-base-100 shadow-2xl h-full">
+          <div class="card-body p-8">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="avatar placeholder">
+                <div class="bg-warning text-warning-content rounded-full w-16">
+                  <span class="text-2xl">ИВ</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-xl">Игорь Волков</h3>
+                <p class="text-sm opacity-60">CTO, FinTech Company</p>
+                <div class="rating rating-md mt-2">
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                  <input type="radio" class="mask mask-star-2 bg-orange-400" disabled checked />
+                </div>
+              </div>
+            </div>
+            <p class="leading-relaxed text-lg">
+              "Интегрировал AI-автоматизацию в наш WordPress - сэкономили 10+ часов в неделю на рутине.
+              Evgenii не просто разработчик, а инженер с системным мышлением. ROI проекта составил 300%."
+            </p>
+            <div class="divider my-4"></div>
+            <div class="flex items-center gap-2 text-sm opacity-70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Проект: AI Automation Integration</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1058,7 +1370,7 @@
               Забронируйте бесплатную 30-минутную консультацию, и мы обсудим ваши задачи
             </p>
             <div class="card-actions justify-start mt-4">
-              <a href="https://calendly.com/eredmonkey/30min" target="_blank" class="btn btn-neutral btn-block gap-2">
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1vWd2QvJmR3jUj4hkxG5oIkPQBxRtzdupkelhwa5UqqY-2HFjG-rqmd27UDPMXynJ2tr93bi76?gv=true" target="_blank" class="btn btn-neutral btn-block gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -1585,6 +1897,48 @@
       }
     });
   });
+
+  // Reviews Carousel Navigation
+  (function() {
+    const carousel = document.querySelector('.reviews-carousel');
+    const prevBtn = document.getElementById('reviews-prev');
+    const nextBtn = document.getElementById('reviews-next');
+    const cards = document.querySelectorAll('.review-card');
+
+    if (!carousel || !prevBtn || !nextBtn || cards.length === 0) return;
+
+    const cardWidth = 450;
+    const gap = 32;
+    const step = cardWidth + gap;
+    const initialOffset = -200;
+    let currentOffset = initialOffset;
+    const minOffset = initialOffset;
+    const maxOffset = -((cards.length - 1) * step) + initialOffset;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(${currentOffset}px)`;
+      prevBtn.disabled = currentOffset >= minOffset;
+      nextBtn.disabled = currentOffset <= maxOffset;
+      prevBtn.classList.toggle('btn-disabled', currentOffset >= minOffset);
+      nextBtn.classList.toggle('btn-disabled', currentOffset <= maxOffset);
+    }
+
+    prevBtn.addEventListener('click', function() {
+      if (currentOffset < minOffset) {
+        currentOffset = Math.min(currentOffset + step, minOffset);
+        updateCarousel();
+      }
+    });
+
+    nextBtn.addEventListener('click', function() {
+      if (currentOffset > maxOffset) {
+        currentOffset = Math.max(currentOffset - step, maxOffset);
+        updateCarousel();
+      }
+    });
+
+    updateCarousel();
+  })();
 </script>
 
 </body>
