@@ -32,6 +32,7 @@
   
   <!-- Styles -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
@@ -153,13 +154,65 @@
       background-clip: text;
     }
     
-    .tech-badge {
+    .tech-icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 80px;
+      padding: 16px 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.3s ease;
+      cursor: default;
+      gap: 8px;
     }
-    
-    .tech-badge:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+
+    .tech-icon-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .tech-icon-card i {
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .tech-icon-card span {
+      font-size: 11px;
+      font-weight: 500;
+      text-align: center;
+      opacity: 0.7;
+      line-height: 1.2;
+    }
+
+    .tech-icon-card:hover span {
+      opacity: 1;
+    }
+
+    .tech-icon-fallback {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: white;
+    }
+
+    [data-theme="light"] .tech-icon-card {
+      background: rgba(0, 0, 0, 0.03);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .tech-icon-card:hover {
+      background: rgba(0, 0, 0, 0.06);
+      border-color: rgba(102, 126, 234, 0.3);
     }
     
     .case-card {
@@ -703,16 +756,43 @@
           </svg>
           WordPress Ecosystem
         </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="tech-badge badge badge-lg badge-primary">WordPress Core</span>
-          <span class="tech-badge badge badge-lg badge-primary">WooCommerce</span>
-          <span class="tech-badge badge badge-lg badge-primary">Kadence Theme</span>
-          <span class="tech-badge badge badge-lg badge-primary">Astra</span>
-          <span class="tech-badge badge badge-lg badge-primary">Elementor</span>
-          <span class="tech-badge badge badge-lg badge-primary">Gutenberg</span>
-          <span class="tech-badge badge badge-lg badge-primary">WPML</span>
-          <span class="tech-badge badge badge-lg badge-primary">ACF Pro</span>
-          <span class="tech-badge badge badge-lg badge-primary">Yoast SEO</span>
+        <div class="flex flex-wrap gap-4">
+          <div class="tech-icon-card">
+            <i class="devicon-wordpress-plain colored"></i>
+            <span>WordPress</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-woocommerce-plain colored"></i>
+            <span>WooCommerce</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #0170B9;">K</div>
+            <span>Kadence</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #5E4CBA;">A</div>
+            <span>Astra</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #92003B;">E</div>
+            <span>Elementor</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #1e8cbe;">G</div>
+            <span>Gutenberg</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #2DA502;">W</div>
+            <span>WPML</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #00e4bc;">ACF</div>
+            <span>ACF Pro</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #A4286A;">Y</div>
+            <span>Yoast SEO</span>
+          </div>
         </div>
       </div>
       
@@ -724,16 +804,43 @@
           </svg>
           Development Stack
         </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="tech-badge badge badge-lg badge-secondary">PHP 8+</span>
-          <span class="tech-badge badge badge-lg badge-secondary">JavaScript ES6+</span>
-          <span class="tech-badge badge badge-lg badge-secondary">Vue.js</span>
-          <span class="tech-badge badge badge-lg badge-secondary">React</span>
-          <span class="tech-badge badge badge-lg badge-secondary">Node.js</span>
-          <span class="tech-badge badge badge-lg badge-secondary">Python</span>
-          <span class="tech-badge badge badge-lg badge-secondary">Django</span>
-          <span class="tech-badge badge badge-lg badge-secondary">GatsbyJS</span>
-          <span class="tech-badge badge badge-lg badge-secondary">Tailwind CSS</span>
+        <div class="flex flex-wrap gap-4">
+          <div class="tech-icon-card">
+            <i class="devicon-php-plain colored"></i>
+            <span>PHP 8+</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-javascript-plain colored"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-vuejs-plain colored"></i>
+            <span>Vue.js</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-react-original colored"></i>
+            <span>React</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-nodejs-plain colored"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-python-plain colored"></i>
+            <span>Python</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-django-plain colored"></i>
+            <span>Django</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-gatsby-plain colored"></i>
+            <span>GatsbyJS</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-tailwindcss-original colored"></i>
+            <span>Tailwind CSS</span>
+          </div>
         </div>
       </div>
       
@@ -745,13 +852,31 @@
           </svg>
           Databases & Caching
         </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="tech-badge badge badge-lg badge-accent">MySQL</span>
-          <span class="tech-badge badge badge-lg badge-accent">PostgreSQL</span>
-          <span class="tech-badge badge badge-lg badge-accent">MS SQL</span>
-          <span class="tech-badge badge badge-lg badge-accent">Redis</span>
-          <span class="tech-badge badge badge-lg badge-accent">Memcached</span>
-          <span class="tech-badge badge badge-lg badge-accent">ElasticSearch</span>
+        <div class="flex flex-wrap gap-4">
+          <div class="tech-icon-card">
+            <i class="devicon-mysql-plain colored"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-postgresql-plain colored"></i>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-microsoftsqlserver-plain colored"></i>
+            <span>MS SQL</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-redis-plain colored"></i>
+            <span>Redis</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #00843D;">M</div>
+            <span>Memcached</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-elasticsearch-plain colored"></i>
+            <span>ElasticSearch</span>
+          </div>
         </div>
       </div>
       
@@ -763,16 +888,43 @@
           </svg>
           DevOps & Hosting
         </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="tech-badge badge badge-lg badge-info">Git</span>
-          <span class="tech-badge badge badge-lg badge-info">Docker</span>
-          <span class="tech-badge badge badge-lg badge-info">CI/CD</span>
-          <span class="tech-badge badge badge-lg badge-info">Infomaniak</span>
-          <span class="tech-badge badge badge-lg badge-info">Beget</span>
-          <span class="tech-badge badge badge-lg badge-info">AWS</span>
-          <span class="tech-badge badge badge-lg badge-info">Cloudflare</span>
-          <span class="tech-badge badge badge-lg badge-info">Nginx</span>
-          <span class="tech-badge badge badge-lg badge-info">Apache</span>
+        <div class="flex flex-wrap gap-4">
+          <div class="tech-icon-card">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-docker-plain colored"></i>
+            <span>Docker</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-githubactions-plain colored"></i>
+            <span>CI/CD</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #0098FF;">ik</div>
+            <span>Infomaniak</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #4C7BDA;">B</div>
+            <span>Beget</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+            <span>AWS</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-cloudflare-plain colored"></i>
+            <span>Cloudflare</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-nginx-original colored"></i>
+            <span>Nginx</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-apache-plain colored"></i>
+            <span>Apache</span>
+          </div>
         </div>
       </div>
       
@@ -785,14 +937,35 @@
           </svg>
           Tools & Automation
         </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="tech-badge badge badge-lg badge-success">ChatGPT/Claude</span>
-          <span class="tech-badge badge badge-lg badge-success">Telegram Bots</span>
-          <span class="tech-badge badge badge-lg badge-success">Zapier</span>
-          <span class="tech-badge badge badge-lg badge-success">Make.com</span>
-          <span class="tech-badge badge badge-lg badge-success">Postman</span>
-          <span class="tech-badge badge badge-lg badge-success">VS Code</span>
-          <span class="tech-badge badge badge-lg badge-success">PHPStorm</span>
+        <div class="flex flex-wrap gap-4">
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #10A37F;">AI</div>
+            <span>ChatGPT/Claude</span>
+          </div>
+          <div class="tech-icon-card">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#26A5E4"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>Telegram Bots</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #FF4A00;">Z</div>
+            <span>Zapier</span>
+          </div>
+          <div class="tech-icon-card">
+            <div class="tech-icon-fallback" style="background: #6D00CC;">M</div>
+            <span>Make.com</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-postman-plain colored"></i>
+            <span>Postman</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-vscode-plain colored"></i>
+            <span>VS Code</span>
+          </div>
+          <div class="tech-icon-card">
+            <i class="devicon-phpstorm-plain colored"></i>
+            <span>PHPStorm</span>
+          </div>
         </div>
       </div>
     </div>
