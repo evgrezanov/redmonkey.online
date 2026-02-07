@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:gravatar.com)",
+      "Bash(git checkout:*)",
+      "Bash(GIT_TERMINAL_PROMPT=0 git rev-parse:*)",
+      "Bash(killall git:*)"
+    ]
+  }
+}
